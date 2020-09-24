@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 import firebase from 'firebase/app';
@@ -74,14 +74,18 @@ function ChatRoom() {
   const messagesRef = firestore.collection('messages');
   const query = messagesRef.orderBy('createdAt').limit(25);
   const [formValue, setFormValue] = useState('');
-const dummy = useRef();
+  const dummy = useRef();
   const [messages] = useCollectionData(query, { idField: 'id' });
+
+  useEffect(() => {
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const sendMessage = async (e) => {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
-
+    // console.log(uid)
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -90,7 +94,7 @@ const dummy = useRef();
     });
 
     setFormValue('');
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
+    // dummy.current.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <>
@@ -107,7 +111,9 @@ const dummy = useRef();
         />
 
         <button type='submit' disabled={!formValue}>
-          🕊️
+          <span role='img' aria-label='send'>
+            🕊️
+          </span>
         </button>
       </form>
     </>
@@ -122,7 +128,7 @@ function ChatMessage({ message }) {
   return (
     <>
       <div className={`message ${messageClass}`}>
-        <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        <img alt='' src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
         <p>{text}</p>
       </div>
     </>

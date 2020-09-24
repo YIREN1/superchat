@@ -1,0 +1,22 @@
+[debug] [2020-09-24T05:01:11.330Z] ----------------------------------------------------------------------
+[debug] [2020-09-24T05:01:11.332Z] Command:       /Users/jamesren/.config/nvm/14.1.0/bin/node /Users/jamesren/.config/nvm/14.1.0/bin/firebase deploy
+[debug] [2020-09-24T05:01:11.333Z] CLI Version:   8.11.0
+[debug] [2020-09-24T05:01:11.333Z] Platform:      darwin
+[debug] [2020-09-24T05:01:11.333Z] Node Version:  v14.1.0
+[debug] [2020-09-24T05:01:11.334Z] Time:          Thu Sep 24 2020 13:01:11 GMT+0800 (China Standard Time)
+[debug] [2020-09-24T05:01:11.334Z] ----------------------------------------------------------------------
+[debug] [2020-09-24T05:01:11.334Z] 
+[debug] [2020-09-24T05:01:11.339Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-24T05:01:11.340Z] > authorizing via signed-in user
+[debug] [2020-09-24T05:01:11.340Z] [iam] checking project super-a35eb for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2020-09-24T05:01:11.343Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/super-a35eb:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2020-09-24T05:01:13.155Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 24 Sep 2020 05:01:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=831","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-24T05:01:13.157Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/super-a35eb/serviceAccounts/super-a35eb@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2020-09-24T05:01:14.751Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 24 Sep 2020 05:01:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'super-a35eb'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
